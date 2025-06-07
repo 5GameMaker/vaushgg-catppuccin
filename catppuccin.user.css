@@ -2,7 +2,7 @@
 @name vaush.gg Catppuccin
 @namespace github.com/5GameMaker/vaushgg-catppuccin
 @homepageURL https://github.com/5GameMaker/vaushgg-catppuccin
-@version 0.0.1
+@version 0.0.2
 @updateURL https://github.com/5GameMaker/vaushgg-catppuccin/raw/master/catppuccin.user.css
 @supportURL https://github.com/5GameMaker/vaushgg-catppuccin/issues
 @description Soothing pastel theme for vaush.gg
@@ -26,7 +26,7 @@
       #catppuccin(@darkFlavor, @accentColor);
     }
   }
-
+  
   #catppuccin(@lookup, @accent) {
     @rosewater: @catppuccin[@@lookup][@rosewater];
     @flamingo: @catppuccin[@@lookup][@flamingo];
@@ -57,11 +57,11 @@
     @accent-color: @catppuccin[@@lookup][@@accent];
 
     color-scheme: if(@lookup = latte, light, dark);
-
+    
     ::selection {
       background-color: fade(@accent-color, 30%);
     }
-
+    
     input,
     textarea {
       &::placeholder {
@@ -72,58 +72,72 @@
     body {
       background-color: @base !important;
       color: @text;
-
+      
       --red: @red;
       --pink: @pink;
       --yellow: @yellow;
-
+      
       --dark: @base;
       --mdc-theme-surface: @base;
-
+      
       --textColor: @text;
       --buttonColor: @accent-color;
-
+      
       --navbarAccent: @mantle;
       --navbarAccentB: @crust;
       --navbarAccentH: @mantle;
       --navbarAccentHB: @crust;
-
+      
       --tier1: @peach;
       --tier2: @red;
       --tier3: @flamingo;
       --tier4: @yellow;
-
+      
       --accentColor: @accent-color;
+      
     }
-
+    
+    #chat {
+      --chatBackGroundColor: @mantle;
+      --userPlateBG: @crust;
+    }
+    
     .mdc-text-field:not(.mdc-text-field--disabled), .vZNpd .typeBlock .typeBlockInner, .headerNote, .innerNote {
       background-color: @mantle;
     }
-
+    
     .inset, .vZNpd:not(.skeleton) {
       background-color: @base;
       border-color: @crust;
     }
-
+    
     .bg-dark {
       background-color: @base !important;
     }
-
+    
     .text-muted, .text-white, .mdc-text-field:not(.mdc-text-field--disabled), .mdc-text-field__input {
       color: @text !important;
     }
-
+    
     .btn-danger, .badge-danger {
       background-color: @accent-color !important;
       border-color: @accent-color;
     }
-
+    
     .insetcard {
       background-color: fade(@accent-color, 20%);
     }
-
+    
     .ready.mdc-button--raised:not(:disabled), .ready.mdc-button--unelevated:not(:disabled) {
       color: @mantle;
+    }
+    
+    .navBarWrapper.items-3 > .navBar {
+      background-color: @crust;
+    }
+    
+    .chat-menu > .list-wrap {
+      background-color: @mantle;
     }
   }
 }
